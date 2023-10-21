@@ -22,13 +22,14 @@ void rot13(std::string &input) {
 
 int main() {
   std::string test{"The quick brown fox jumps over 13 lazy dogs."};
+  std::string original{test};
   const std::string expected_value{
       "Gur dhvpx oebja sbk whzcf bire 13 ynml qbtf."};
 
-  std::cout << test << std::endl;
   rot13(test);
-  std::cout << test << std::endl;
-
   assert(test == expected_value);
+
+  rot13(test);
+  assert(test == original);
   return EXIT_SUCCESS;
 }
